@@ -1,11 +1,8 @@
 ## Stéphane Hamel
 
-Staff-level backend engineer. I build systems that scale and 
-pipelines that think.
+Backend engineer building systems that scale and pipelines that think.
 
-Most of my public work explores one thesis: AI changes the SDLC 
-fundamentally — not as a copilot, but as an autonomous actor with 
-explicit contracts, guard rails, and observable state.
+Most of my public work explores one thesis: AI changes the SDLC fundamentally — not as a copilot, but as an autonomous actor with explicit contracts, guard rails, and observable state.
 
 | | |
 |---|---|
