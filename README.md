@@ -11,3 +11,9 @@ Most of my public work explores one thesis: AI changes the SDLC fundamentally �
 | [`ai-dev-tools`](https://github.com/koydas/ai-dev-tools) | Claude Code toolbox — commands, agents, skills for AI-native dev |
 | [`sync-engine`](https://github.com/koydas/sync-engine) | Hybrid REST/webhook sync — idempotent, failure-tolerant |
 | [`fullstack-pilot`](https://github.com/koydas/fullstack-pilot) | Polyglot multi-service stack — GitOps, ADRs, trade-offs documented |
+
+## Homelab
+| | |
+|---|---|
+| [`gitops-homelab`](https://github.com/koydas/gitops-homelab) | Bare-metal microk8s, GPU passthrough — GitOps via ArgoCD |
+| [`ollama-chat`](https://github.com/koydas/ollama-chat) | Self-hosted LLM chat UI, deployed on the above |
