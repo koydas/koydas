@@ -1,6 +1,6 @@
 ## Stéphane Hamel
 
-Backend engineer building systems that scale and pipelines that think.
+Staff engineer building systems that scale and pipelines that think.
 
 Most of my public work explores one thesis: AI changes the SDLC fundamentally — not as a copilot, but as an autonomous actor with explicit contracts, guard rails, and observable state.
 
