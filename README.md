@@ -12,7 +12,7 @@ Most of my public work explores one thesis: AI changes the SDLC fundamentally �
 | [`sync-engine`](https://github.com/koydas/sync-engine) | Hybrid REST/webhook sync — idempotent, failure-tolerant |
 | [`fullstack-pilot`](https://github.com/koydas/fullstack-pilot) | Polyglot multi-service stack — GitOps, ADRs, trade-offs documented |
 
-## Homelab
+### Homelab
 | | |
 |---|---|
 | [`gitops-homelab`](https://github.com/koydas/gitops-homelab) | Bare-metal microk8s, GPU passthrough — GitOps via ArgoCD |
