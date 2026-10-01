@@ -50,7 +50,7 @@ flowchart LR
 ### How I work
 
 - **Decisions in writing.** 65+ ADRs across these repos, each with rejected alternatives and consequences.
-- **Incidents, not hypotheticals.** Guardrails and config trace back to a specific failure: a deleted test suite, a CUDA OOM, a Helm key silently ignored for a week.
+- **Incidents, not hypotheticals.** Guardrails and config trace back to a specific failure: a deleted test suite, a CUDA OOM, a Helm setting that never reached the pod.
 - **Measure, then decide.** Quantization chosen by benchmark and by executing the generated code, not by reputation.
 - **Honest scope.** What's enforced in code and what's only asked of a model are documented separately.
 
