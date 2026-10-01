@@ -43,7 +43,7 @@ flowchart LR
     end
     adl -- "patterns extracted to" --> ap
     adt -- "patterns extracted to" --> ap
-    adl <-. "same pipeline, two modes" .-> adt
+    adl -.-|"same pipeline, two modes"| adt
     gh -- "deploys" --> oc
 ```
 
