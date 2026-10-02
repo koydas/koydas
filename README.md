@@ -16,7 +16,7 @@ Platform engineer. I build agentic SDLC pipelines and the infrastructure they ru
 
 | | |
 |---|---|
-| [`gitops-homelab`](https://github.com/koydas/gitops-homelab) | Chat, code, vision, speech-to-text and text-to-speech models on one 6 GB GTX 1060 — bare-metal microk8s, ArgoCD, GPU time-slicing. 25 ADRs, 11 incidents written up with root cause. |
+| [`gitops-homelab`](https://github.com/koydas/gitops-homelab) | Chat, code, vision, speech-to-text and text-to-speech models on one 6 GB GTX 1060 — bare-metal microk8s, ArgoCD, GPU time-slicing. 25 ADRs, 13 incidents written up with root cause. |
 | [`ollama-chat`](https://github.com/koydas/ollama-chat) | Self-hosted chat UI for local LLMs, deployed by the repo above. |
 
 ### Platform fundamentals
