@@ -1,9 +1,9 @@
 import { defineConfig } from 'vitest/config';
 import react from '@vitejs/plugin-react';
 
-// Served from https://koydas.github.io/koydas/ (project page, not a user page).
+// Relative base: works at the root of a user page (koydas.github.io) and under a project page (/koydas/).
 export default defineConfig({
-  base: '/koydas/',
+  base: './',
   plugins: [react()],
   test: {
     environment: 'happy-dom',
