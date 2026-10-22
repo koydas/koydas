@@ -1,0 +1,50 @@
+import type { Project } from '../types';
+
+const GITHUB = 'https://github.com/koydas';
+
+export const projects: Project[] = [
+  {
+    id: 'autonomous-dev-loop',
+    title: 'Autonomous Dev Loop',
+    summary:
+      'Issue → AI PR → evidence-backed AI review → auto-fix → human merge, on GitHub Actions.',
+    highlights: ['800+ tests', '25 ADRs', 'Eval gates'],
+    tags: ['GitHub Actions', 'Guardrails', 'Multi-agent'],
+    links: [
+      { label: 'Live demo', href: 'https://koydas.github.io/autonomous-dev-loop/' },
+      { label: 'GitHub', href: `${GITHUB}/autonomous-dev-loop` },
+    ],
+    visual: { type: 'pipeline' },
+  },
+  {
+    id: 'ai-dev-tools',
+    title: 'AI Dev Tools',
+    summary:
+      'Interactive agent workflows in Claude Code, grounded in real test results.',
+    highlights: ['Typed builders', 'Adversarial challenger', 'Test-running reviewer'],
+    tags: ['Claude Code', 'DevEx', 'Workflow'],
+    links: [{ label: 'View project', href: `${GITHUB}/ai-dev-tools` }],
+    visual: {
+      type: 'commands',
+      commands: ['/pr-review', '/pr-fixer', '/issue-code-generation'],
+    },
+  },
+  {
+    id: 'agent-patterns',
+    title: 'Agent Patterns',
+    summary: '15 multi-agent patterns indexed by the problem they solve.',
+    highlights: ['Diagrams', 'Trade-offs', 'Failure modes', 'Runnable code'],
+    tags: ['Patterns', 'Agents', 'Architecture'],
+    links: [{ label: 'View project', href: `${GITHUB}/agent-patterns` }],
+  },
+];
+
+export const infrastructure: Project = {
+  id: 'gitops-homelab',
+  title: 'GitOps Homelab',
+  summary:
+    'Chat, code, vision and speech models on one 6 GB GPU — bare-metal microk8s, ArgoCD, GPU time-slicing.',
+  highlights: [],
+  tags: ['Kubernetes', 'ArgoCD', 'Ollama'],
+  links: [{ label: 'View project', href: `${GITHUB}/gitops-homelab` }],
+};
