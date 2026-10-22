@@ -1,83 +1,57 @@
 Stéphane Hamel
 
-Platform Engineering · Agentic Systems · AI-Native Software Delivery
+Platform engineer. I build agentic SDLC pipelines and the infrastructure they run on.
 
-I build the foundations that make AI agents reliable.
+Thesis — bounded autonomy. Let agents do the work, but enforce in code what a prompt can only ask, ground every verdict in executed evidence, and keep a human at the irreversible step. Every repo below is that idea under a different constraint.
 
-I design agent harnesses, safety boundaries, evaluation pipelines, and developer platforms that make AI-assisted software delivery verifiable, recoverable, and useful to engineering teams.
+Agentic SDLC
 
-My approach: bounded autonomy. Let agents do the work, enforce critical constraints in code, ground decisions in executed evidence, and keep humans in control of irreversible actions.
+	
+autonomous-dev-loop	Issue → AI PR → evidence-backed AI review → auto-fix → human merge, on GitHub Actions. Built after an agent replaced a 26-test suite with an 18-line stub; 11 of its own features were shipped by the loop. 800+ tests, 25 ADRs.
+ai-dev-tools	The interactive counterpart in Claude Code: typed builders, an adversarial challenger, and a reviewer that runs your tests before it calls a patch done.
+agent-patterns	15 multi-agent patterns indexed by the problem they solve — diagrams, trade-offs, failure modes, runnable code. 12 extracted from the two repos above.
 
-Focus: Agent harnesses · Safe execution · Evaluations · Developer experience · Distributed systems
+Infrastructure
 
-Explore my projects · Engineering principles · Current focus
+	
+gitops-homelab	Chat, code, vision, speech-to-text and text-to-speech models on one 6 GB GTX 1060 — bare-metal microk8s, ArgoCD, GPU time-slicing. 25 ADRs, 13 incidents written up with root cause.
+ollama-chat	Self-hosted chat UI for local LLMs, deployed by the repo above.
 
-⸻
+Platform fundamentals
 
-Selected work
+	
+sync-engine	Webhooks drop events, polling is late: a Python sync engine built around 11 integration failure modes, each mapped to an ADR and a test.
+fullstack-pilot	Node, Python and .NET on MongoDB, PostgreSQL and SQL Server — with CI that tests database image upgrades against existing data.
 
-01 — Autonomous Dev Loop
+flowchart LR
+    subgraph sdlc["Agentic SDLC"]
+        adl["autonomous-dev-loop<br/>headless · GitHub Actions"]
+        adt["ai-dev-tools<br/>interactive · Claude Code"]
+        ap["agent-patterns"]
+    end
+    subgraph infra["Self-hosted infrastructure"]
+        gh["gitops-homelab<br/>microk8s · ArgoCD · GTX 1060"]
+        oc["ollama-chat"]
+    end
+    subgraph fund["Platform fundamentals"]
+        se["sync-engine"]
+        fp["fullstack-pilot"]
+    end
+    adl -- "patterns extracted to" --> ap
+    adt -- "patterns extracted to" --> ap
+    adl -.-|"same pipeline, two modes"| adt
+    gh -- "deploys" --> oc
 
-An agentic SDLC with deterministic guardrails.
+How I work
 
-GitHub issue → AI-generated pull request → evidence-backed review → bounded auto-fix → human merge.
-
-* Safety: Protected paths, patch constraints, limited retries, and isolated execution without repository secrets.
-* Evidence: Reviews use executed checks; failed, missing, or stale evidence cannot produce an approval.
-* Reliability: Structured traces, checkpoints, recovery paths, and offline evaluations of agent decisions.
-
-Proof: Source · Evaluation dashboard · Guardrail incident and design decision
-
-02 — AI Dev Tools
-
-An interactive agent harness for everyday development.
-
-Specialized agents turn issues into proposed patches, with typed handoffs, resumable checkpoints, optional adversarial review, and validation against the repository’s own tests, lint, and type checks.
-
-* Bug fixes must include evidence that reproduces the original failure.
-* Review findings are grounded in checks actually executed, not agent confidence.
-* Changes stop as uncommitted patches for human review.
-
-Proof: Source and workflow · Tool-grounded review decision
-
-03 — Agent Patterns
-
-Reusable architecture patterns extracted from working agent systems.
-
-A catalog of multi-agent patterns with executable examples, failure modes, trade-offs, and guidance on when not to use them. Patterns are traced back to their use in Autonomous Dev Loop and AI Dev Tools, rather than presented as an untested framework.
-
-Proof: Pattern catalog · Browse the patterns
-
-⸻
-
-Infrastructure & runtime
-
-GitOps Homelab
-
-A self-hosted AI stack operating under real hardware constraints.
-
-Bare-metal microk8s + ArgoCD running local chat, code, vision, speech-to-text, and text-to-speech components on a 6 GB GTX 1060. Infrastructure changes flow through Git; architecture decisions and actual incidents are documented alongside the system.
-
-Proof: Architecture and source · Incident runbook · Model quantization decision
-
-Related foundations: Homelab Gateway — content-based AI service routing and observability · Sync Engine — idempotent webhook processing, reconciliation, and failure-driven testing.
-
-⸻
-
-How I engineer
-
-* Code-enforced boundaries over prompt-only rules. Critical safety properties should not depend on whether a model follows instructions.
-* Executed evidence over plausible output. Tests, evaluations, and traces are more useful than an agent saying “done.”
-* Failures as design inputs. Incidents inform safeguards, recovery paths, and architectural decisions.
-* Systems over isolated features. I optimize for reusable foundations, developer experience, and long-term operability.
-* Decisions in writing. Trade-offs, rejected alternatives, and consequences should remain visible in the repositories.
+* Decisions in writing. 65+ ADRs across these repos, each with rejected alternatives and consequences.
+* Incidents, not hypotheticals. Guardrails and config trace back to a specific failure: a deleted test suite, a CUDA OOM, a Helm setting that never reached the pod.
+* Measure, then decide. Quantization chosen by benchmark and by executing the generated code, not by reputation.
+* Honest scope. What’s enforced in code and what’s only asked of a model are documented separately.
 
 Current focus
 
-Agentic Platform / Agentic Foundations: reliable agent execution, orchestration, evaluation, observability, safety boundaries, and the internal platforms that help engineering teams adopt them.
+* Moving LLM guardrails from prompts into deterministic checks — import allowlists and type-check gates before a PR opens (ADR-0019, proposed).
+* Evaluating local models on constrained hardware by running what they produce (ADR-0011).
 
-Technologies: TypeScript/JavaScript · Python · .NET · GitHub Actions · Docker · Kubernetes · ArgoCD · Ollama
-
-⸻
-
-View all repositories →
+Node.js · .NET · Python · Kubernetes · ArgoCD · GitHub Actions · Claude API · Ollama
