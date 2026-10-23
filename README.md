@@ -8,7 +8,7 @@ Platform engineer. I build agentic SDLC pipelines and the infrastructure they ru
 
 | | |
 |---|---|
-| [`autonomous-dev-loop`](https://github.com/koydas/autonomous-dev-loop) | Issue → AI PR → evidence-backed AI review → auto-fix → human merge, on GitHub Actions. Built after an agent replaced a 26-test suite with an 18-line stub; 11 of its own features were shipped by the loop. 800+ tests, 25 ADRs. |
+| [`autonomous-dev-loop`](https://github.com/koydas/autonomous-dev-loop) | Issue → AI PR → evidence-backed AI review → auto-fix → human merge, on GitHub Actions. Built after an agent replaced a 26-test suite with an 18-line stub; 11 of its own features were shipped by the loop. 2,300+ tests, 48 ADRs. |
 | [`ai-dev-tools`](https://github.com/koydas/ai-dev-tools) | The interactive counterpart in Claude Code: typed builders, an adversarial challenger, and a reviewer that runs your tests before it calls a patch done. |
 | [`agent-patterns`](https://github.com/koydas/agent-patterns) | 15 multi-agent patterns indexed by the problem they solve — diagrams, trade-offs, failure modes, runnable code. 12 extracted from the two repos above. |
 
@@ -49,7 +49,7 @@ flowchart LR
 
 ### How I work
 
-- **Decisions in writing.** 65+ ADRs across these repos, each with rejected alternatives and consequences.
+- **Decisions in writing.** 100+ ADRs across these repos, each with rejected alternatives and consequences.
 - **Incidents, not hypotheticals.** Guardrails and config trace back to a specific failure: a deleted test suite, a CUDA OOM, a Helm setting that never reached the pod.
 - **Measure, then decide.** Quantization chosen by benchmark and by executing the generated code, not by reputation.
 - **Honest scope.** What's enforced in code and what's only asked of a model are documented separately.

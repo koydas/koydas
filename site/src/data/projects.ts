@@ -8,7 +8,7 @@ export const projects: Project[] = [
     title: 'Autonomous Dev Loop',
     summary:
       'Issue → AI PR → evidence-backed AI review → auto-fix → human merge, on GitHub Actions.',
-    highlights: ['800+ tests', '25 ADRs', 'Eval gates'],
+    highlights: ['2,300+ tests', '48 ADRs', 'Eval gates'],
     tags: ['GitHub Actions', 'Guardrails', 'Multi-agent'],
     links: [
       { label: 'Live demo', href: 'https://koydas.github.io/autonomous-dev-loop/' },
