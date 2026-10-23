@@ -44,7 +44,7 @@ export const stack = [
 export const practices = [
   {
     title: 'Decisions in writing',
-    body: '65+ ADRs across these repos, each with rejected alternatives and consequences.',
+    body: '100+ ADRs across these repos, each with rejected alternatives and consequences.',
   },
   {
     title: 'Incidents, not hypotheticals',
