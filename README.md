@@ -8,9 +8,9 @@ Platform engineer. I build agentic SDLC pipelines and the infrastructure they ru
 
 | | |
 |---|---|
-| [`autonomous-dev-loop`](https://github.com/koydas/autonomous-dev-loop) | Issue → AI PR → evidence-backed AI review → auto-fix → human merge, on GitHub Actions. Built after an agent replaced a 26-test suite with an 18-line stub; 11 of its own features were shipped by the loop. 2,300+ tests, 48 ADRs. |
-| [`ai-dev-tools`](https://github.com/koydas/ai-dev-tools) | The interactive counterpart in Claude Code: typed builders, an adversarial challenger, and a reviewer that runs your tests before it calls a patch done. |
-| [`agent-patterns`](https://github.com/koydas/agent-patterns) | 15 multi-agent patterns indexed by the problem they solve — diagrams, trade-offs, failure modes, runnable code. 12 extracted from the two repos above. |
+| [`autonomous-dev-loop`](https://github.com/koydas/autonomous-dev-loop) | Issue → AI PR → evidence-backed AI review → auto-fix → human merge, on GitHub Actions. Built after an agent replaced a 26-test suite with an 18-line stub; 11 of its own features were shipped by the loop. 2,400+ tests, 57 ADRs. [Dashboard](https://koydas.github.io/autonomous-dev-loop/). |
+| [`ai-dev-tools`](https://github.com/koydas/ai-dev-tools) | The interactive counterpart in Claude Code: typed builders, an adversarial challenger, and a reviewer that runs your tests before it calls a patch done. [Dashboard](https://koydas.github.io/ai-dev-tools/). |
+| [`agent-patterns`](https://github.com/koydas/agent-patterns) | 16 multi-agent patterns indexed by the problem they solve — diagrams, trade-offs, failure modes, runnable code. 12 extracted from the two repos above. |
 
 ### Infrastructure
 
@@ -56,7 +56,7 @@ flowchart LR
 
 ### Current focus
 
-- Moving LLM guardrails from prompts into deterministic checks — import allowlists and type-check gates before a PR opens ([ADR-0019](https://github.com/koydas/autonomous-dev-loop/blob/main/docs/adr/0019-static-verification-backstop.md), proposed).
+- Executable evals for code-writing stages: a generated patch is graded by running the target's tests in a separate, secret-free job, and a crash or an incomplete test run is never scored as success ([ADR-0052](https://github.com/koydas/autonomous-dev-loop/blob/main/docs/adr/0052-isolated-grader-for-executable-evals.md), proposed; grader phase shipped).
 - Evaluating local models on constrained hardware by running what they produce ([ADR-0011](https://github.com/koydas/gitops-homelab/blob/main/docs/adr/0011-ollama-q4-quantization.md)).
 
 `Node.js` · `.NET` · `Python` · `Kubernetes` · `ArgoCD` · `GitHub Actions` · `Claude API` · `Ollama`
