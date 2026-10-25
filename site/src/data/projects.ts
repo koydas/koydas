@@ -8,7 +8,7 @@ export const projects: Project[] = [
     title: 'Autonomous Dev Loop',
     summary:
       'Issue → AI PR → evidence-backed AI review → auto-fix → human merge, on GitHub Actions.',
-    highlights: ['2,400+ tests', '57 ADRs', 'Eval gates'],
+    highlights: ['2,400+ tests', '59 ADRs', 'Eval gates'],
     tags: ['GitHub Actions', 'Guardrails', 'Multi-agent'],
     links: [
       { label: 'Live demo', href: 'https://koydas.github.io/autonomous-dev-loop/' },
@@ -35,7 +35,7 @@ export const projects: Project[] = [
   {
     id: 'agent-patterns',
     title: 'Agent Patterns',
-    summary: '16 multi-agent patterns indexed by the problem they solve.',
+    summary: '17 multi-agent patterns indexed by the problem they solve.',
     highlights: ['Diagrams', 'Trade-offs', 'Failure modes', 'Runnable code'],
     tags: ['Patterns', 'Agents', 'Architecture'],
     links: [{ label: 'View project', href: `${GITHUB}/agent-patterns` }],
