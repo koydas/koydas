@@ -35,7 +35,7 @@ export const projects: Project[] = [
   {
     id: 'agent-patterns',
     title: 'Agent Patterns',
-    summary: '16 multi-agent patterns indexed by the problem they solve.',
+    summary: '17 multi-agent patterns indexed by the problem they solve.',
     highlights: ['Diagrams', 'Trade-offs', 'Failure modes', 'Runnable code'],
     tags: ['Patterns', 'Agents', 'Architecture'],
     links: [{ label: 'View project', href: `${GITHUB}/agent-patterns` }],
