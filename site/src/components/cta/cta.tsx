@@ -22,6 +22,14 @@ export default function Cta() {
           >
             See GitHub
           </LinkButton>
+          <LinkButton
+            href={site.linkedinUrl}
+            variant="secondary"
+            leadingIcon="linkedin"
+            trailingIcon="arrow-up-right"
+          >
+            LinkedIn
+          </LinkButton>
         </CtaActions>
       </CtaBox>
     </CtaWrapper>
