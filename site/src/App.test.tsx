@@ -11,6 +11,17 @@ describe('App', () => {
     });
   });
 
+  it('keeps systems engineering projects distinct from featured AI work', () => {
+    const { container } = render(<App />);
+
+    const foundation = container.querySelector('#foundations');
+    expect(foundation).not.toBeNull();
+    expect(foundation).toHaveTextContent('Sync Engine');
+    expect(foundation).toHaveTextContent('FullStack Pilot');
+    expect(foundation?.querySelectorAll('a[href^="https://github.com/koydas/"]')).toHaveLength(2);
+    expect(container.querySelector('#work')).not.toHaveTextContent('Sync Engine');
+  });
+
   it('renders the main landmark with the hero headline', () => {
     render(<App />);
 

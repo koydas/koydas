@@ -42,6 +42,26 @@ export const projects: Project[] = [
   },
 ];
 
+
+export const foundations: Project[] = [
+  {
+    id: 'sync-engine',
+    title: 'Sync Engine',
+    summary: 'Eventual consistency under real-world failure: webhooks for speed, REST reconciliation for recovery.',
+    highlights: ['90 tests', 'Property-based convergence', 'Versioned idempotent writes'],
+    tags: ['Distributed Systems', 'Reconciliation', 'Python'],
+    links: [{ label: 'GitHub', href: `${GITHUB}/sync-engine` }],
+  },
+  {
+    id: 'fullstack-pilot',
+    title: 'FullStack Pilot',
+    summary: 'A polyglot reference platform where architecture decisions become executable CI guarantees.',
+    highlights: ['Database upgrade safety', 'Runtime consistency', 'End-to-end integration'],
+    tags: ['Platform Engineering', 'CI/CD', 'Polyglot'],
+    links: [{ label: 'GitHub', href: `${GITHUB}/fullstack-pilot` }],
+  },
+];
+
 export const infrastructure: Project = {
   id: 'gitops-homelab',
   title: 'GitOps Homelab',
