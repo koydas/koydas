@@ -1,6 +1,7 @@
 import AboutSection from './components/about-section/about-section';
 import Cta from './components/cta/cta';
 import Footer from './components/footer/footer';
+import EngineeringFoundations from './components/engineering-foundations/engineering-foundations';
 import Header from './components/header/header';
 import Hero from './components/hero/hero';
 import InfraCard from './components/infra-card/infra-card';
@@ -17,6 +18,7 @@ export default function App() {
         <Hero />
         <WorkSection />
         <InfraCard />
+        <EngineeringFoundations />
         <AboutSection />
         <WritingSection />
         <Cta />
