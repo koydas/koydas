@@ -2,6 +2,12 @@ import type { ReactNode } from 'react';
 import type { IconName } from '../../types';
 
 const strokeIcons: Record<Exclude<IconName, 'github'>, ReactNode> = {
+  linkedin: (
+    <>
+      <rect x="3" y="3" width="18" height="18" rx="2" />
+      <path d="M8 10v7M8 7v.01M12 17v-7M12 13.5a2.5 2.5 0 0 1 5 0V17" />
+    </>
+  ),
   'arrow-right': <path d="M5 12h14M12 5l7 7-7 7" />,
   'arrow-up-right': <path d="M7 17 17 7M8 7h9v9" />,
   mail: (

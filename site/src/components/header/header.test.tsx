@@ -25,6 +25,21 @@ describe('Header', () => {
     });
   });
 
+  it('links Contact to email and shows the GitHub and LinkedIn profiles', () => {
+    setViewport(1200);
+    render(<Header />);
+
+    expect(screen.getByRole('link', { name: /contact/i })).toHaveAttribute(
+      'href',
+      'mailto:koydas@hotmail.com'
+    );
+    expect(screen.getByRole('link', { name: /github profile/i })).toBeInTheDocument();
+    expect(screen.getByRole('link', { name: /linkedin profile/i })).toHaveAttribute(
+      'href',
+      'https://www.linkedin.com/in/st%C3%A9phane-hamel/'
+    );
+  });
+
   it('toggles the mobile menu', async () => {
     setViewport(500);
     const user = userEvent.setup();

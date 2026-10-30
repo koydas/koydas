@@ -4,8 +4,8 @@ export const site = {
   name: 'Stéphane Hamel',
   initials: 'SH',
   githubUrl: 'https://github.com/koydas',
-  // Contact channel: swap for a mailto: or LinkedIn URL when one should be public.
-  contactUrl: 'https://github.com/koydas',
+  linkedinUrl: 'https://www.linkedin.com/in/st%C3%A9phane-hamel/',
+  contactUrl: 'mailto:koydas@hotmail.com',
 };
 
 export const navItems: NavItem[] = [

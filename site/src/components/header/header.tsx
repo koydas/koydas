@@ -51,6 +51,14 @@ export default function Header() {
           >
             <Icon name="github" />
           </IconLink>
+          <IconLink
+            href={site.linkedinUrl}
+            target="_blank"
+            rel="noopener noreferrer"
+            aria-label="LinkedIn profile"
+          >
+            <Icon name="linkedin" />
+          </IconLink>
           <DesktopOnly>
             <LinkButton href={site.contactUrl} leadingIcon="mail">
               Contact
