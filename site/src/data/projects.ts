@@ -35,10 +35,19 @@ export const projects: Project[] = [
   {
     id: 'agent-patterns',
     title: 'Agent Patterns',
-    summary: '17 multi-agent patterns indexed by the problem they solve.',
+    summary: '20 multi-agent patterns indexed by the problem they solve.',
     highlights: ['Diagrams', 'Trade-offs', 'Failure modes', 'Runnable code'],
     tags: ['Patterns', 'Agents', 'Architecture'],
     links: [{ label: 'View project', href: `${GITHUB}/agent-patterns` }],
+  },
+  {
+    id: 'repo-orchestrator',
+    title: 'Repo Orchestrator',
+    summary:
+      'Design phase, no code yet: cross-repository coherence — find where one repo’s claims about another have drifted, with evidence pinned to commits.',
+    highlights: ['Design phase', '10 proposed ADRs', 'Read-only by design'],
+    tags: ['Cross-repo', 'Architecture', 'LangGraph'],
+    links: [{ label: 'GitHub', href: `${GITHUB}/repo-orchestrator` }],
   },
 ];
 
