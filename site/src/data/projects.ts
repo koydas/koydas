@@ -44,10 +44,13 @@ export const projects: Project[] = [
     id: 'repo-orchestrator',
     title: 'Repo Orchestrator',
     summary:
-      'Design phase, no code yet: cross-repository coherence — find where one repo’s claims about another have drifted, with evidence pinned to commits.',
-    highlights: ['Design phase', '10 proposed ADRs', 'Read-only by design'],
-    tags: ['Cross-repo', 'Architecture', 'LangGraph'],
-    links: [{ label: 'GitHub', href: `${GITHUB}/repo-orchestrator` }],
+      'Cross-repository coherence: a deterministic, read-only scan that finds where one repo’s claims about another have drifted, with evidence pinned to commits.',
+    highlights: ['M1 implemented', '12 proposed ADRs', 'Read-only by design'],
+    tags: ['Cross-repo', 'Architecture', 'Deterministic'],
+    links: [
+      { label: 'Dashboard', href: 'https://koydas.github.io/repo-orchestrator/' },
+      { label: 'GitHub', href: `${GITHUB}/repo-orchestrator` },
+    ],
   },
 ];
 
