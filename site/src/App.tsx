@@ -4,6 +4,7 @@ import Footer from './components/footer/footer';
 import EngineeringFoundations from './components/engineering-foundations/engineering-foundations';
 import Header from './components/header/header';
 import Hero from './components/hero/hero';
+import LeverageSection from './components/leverage-section/leverage-section';
 import InfraCard from './components/infra-card/infra-card';
 import WorkSection from './components/work-section/work-section';
 import WritingSection from './components/writing-section/writing-section';
@@ -19,6 +20,7 @@ export default function App() {
         <WorkSection />
         <InfraCard />
         <EngineeringFoundations />
+        <LeverageSection />
         <AboutSection />
         <WritingSection />
         <Cta />

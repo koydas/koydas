@@ -39,3 +39,16 @@ export interface NavItem {
   label: string;
   href: string;
 }
+
+export interface EvidenceItem {
+  /** Where the claim can be checked: a repo or a context. */
+  source: string;
+  text: string;
+  href?: string;
+}
+
+export interface Principle {
+  title: string;
+  body: string;
+  evidence: EvidenceItem[];
+}

@@ -1,6 +1,6 @@
 ## Stéphane Hamel
 
-Platform engineer. I build agentic SDLC pipelines and the infrastructure they run on.
+Platform engineer — AI-native engineering, platform engineering and DevEx. I build agentic SDLC pipelines and the infrastructure they run on.
 
 **Thesis — bounded autonomy.** Let agents do the work, but enforce in code what a prompt can only ask, ground every verdict in executed evidence, and keep a human at the irreversible step. Every repo below is that idea under a different constraint.
 
@@ -10,8 +10,8 @@ Platform engineer. I build agentic SDLC pipelines and the infrastructure they ru
 |---|---|
 | [`autonomous-dev-loop`](https://github.com/koydas/autonomous-dev-loop) | Issue → AI PR → evidence-backed AI review → auto-fix → human merge, on GitHub Actions. Built after an agent replaced a 26-test suite with an 18-line stub; 11 of its own features were shipped by the loop. 2,400+ tests, 59 ADRs. [Dashboard](https://koydas.github.io/autonomous-dev-loop/). |
 | [`ai-dev-tools`](https://github.com/koydas/ai-dev-tools) | The interactive counterpart in Claude Code: typed builders, an adversarial challenger, and a reviewer that runs your tests before it calls a patch done. [Dashboard](https://koydas.github.io/ai-dev-tools/). |
-| [`agent-patterns`](https://github.com/koydas/agent-patterns) | 20 multi-agent patterns indexed by the problem they solve — diagrams, trade-offs, failure modes, runnable code. 12 extracted from the two repos above. |
-| [`repo-orchestrator`](https://github.com/koydas/repo-orchestrator) | **M1 implemented, M2–M5 design only.** Cross-repository coherence: a deterministic, read-only scan that finds where one repo's claims about another have drifted, with typed relationships, policies with named authorities, and evidence pinned to commits. 12 proposed ADRs. [Dashboard](https://koydas.github.io/repo-orchestrator/). |
+| [`agent-patterns`](https://github.com/koydas/agent-patterns) | 21 multi-agent patterns indexed by the problem they solve — diagrams, trade-offs, failure modes, runnable code. 12 extracted from the two repos above. |
+| [`repo-orchestrator`](https://github.com/koydas/repo-orchestrator) | **M1–M2 implemented, M3–M5 design only.** Cross-repository coherence: a deterministic, read-only scan that finds where one repo's claims about another have drifted, with typed relationships, policies with named authorities, and evidence pinned to commits. 14 proposed ADRs. [Dashboard](https://koydas.github.io/repo-orchestrator/). |
 
 ### Infrastructure
 
@@ -33,7 +33,7 @@ flowchart LR
         adl["autonomous-dev-loop<br/>headless · GitHub Actions"]
         adt["ai-dev-tools<br/>interactive · Claude Code"]
         ap["agent-patterns"]
-        ro["repo-orchestrator<br/>M1 · read-only scan"]
+        ro["repo-orchestrator<br/>M1–M2 · read-only scan"]
     end
     subgraph infra["Self-hosted infrastructure"]
         gh["gitops-homelab<br/>microk8s · ArgoCD · GTX 1060"]
@@ -49,6 +49,15 @@ flowchart LR
     adl -.-|"LangGraph lessons"| ro
     gh -- "deploys" --> oc
 ```
+
+### How I multiply engineering impact
+
+- **Design for leverage.** *Maestro* (professional work): a reusable engine with extension contracts; around ten developers across several teams built templates on it without modifying the engine.
+- **Enable, don't bottleneck.** *Ravyx* (professional work): AI-assisted workflows for implementation, pull request review and QA automation, standardised across engineers. [`ai-dev-tools`](https://github.com/koydas/ai-dev-tools) ships as a Claude Code plugin a repository adopts with two settings keys ([ADR-018](https://github.com/koydas/ai-dev-tools/blob/main/docs/adr/ADR-018-consumer-repo-adoption.md)).
+- **Make quality systemic.** In [`autonomous-dev-loop`](https://github.com/koydas/autonomous-dev-loop) a failing test run forces the review verdict to `REQUEST_CHANGES` in code and each LLM stage is gated by offline evals; in [`sync-engine`](https://github.com/koydas/sync-engine) every failure mode maps to an ADR and a test.
+- **Lead through architecture.** [`agent-patterns`](https://github.com/koydas/agent-patterns) records trade-offs and failure modes; [`repo-orchestrator`](https://github.com/koydas/repo-orchestrator) detects drift between repositories (scan and PR impact implemented, remediation design only).
+
+The goal is to make the engineering organization stronger without making it dependent on me.
 
 ### How I work
 
