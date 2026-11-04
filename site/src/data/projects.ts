@@ -35,7 +35,7 @@ export const projects: Project[] = [
   {
     id: 'agent-patterns',
     title: 'Agent Patterns',
-    summary: '20 multi-agent patterns indexed by the problem they solve.',
+    summary: '21 multi-agent patterns indexed by the problem they solve.',
     highlights: ['Diagrams', 'Trade-offs', 'Failure modes', 'Runnable code'],
     tags: ['Patterns', 'Agents', 'Architecture'],
     links: [{ label: 'View project', href: `${GITHUB}/agent-patterns` }],
@@ -45,7 +45,7 @@ export const projects: Project[] = [
     title: 'Repo Orchestrator',
     summary:
       'Cross-repository coherence: a deterministic, read-only scan that finds where one repo’s claims about another have drifted, with evidence pinned to commits.',
-    highlights: ['M1 implemented', '12 proposed ADRs', 'Read-only by design'],
+    highlights: ['M1–M2 implemented', '14 proposed ADRs', 'Read-only by design'],
     tags: ['Cross-repo', 'Architecture', 'Deterministic'],
     links: [
       { label: 'Dashboard', href: 'https://koydas.github.io/repo-orchestrator/' },

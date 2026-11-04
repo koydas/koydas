@@ -27,13 +27,14 @@ export default function Hero() {
   return (
     <HeroSection id="home" aria-labelledby="hero-title">
       <div>
-        <Eyebrow>Platform Engineering · Agentic Systems</Eyebrow>
+        <Eyebrow>AI-Native Engineering · Platform Engineering · DevEx</Eyebrow>
         <Title id="hero-title">
           I build the foundations that make AI agents <Accent>reliable.</Accent>
         </Title>
         <Lede>
           Agent harnesses, safe execution, evaluations, and developer platforms. I design systems
-          that make automation trustworthy, observable, and useful in real software teams.
+          that make automation trustworthy, observable, and useful in real software teams — and
+          that let other engineers build on them without me.
         </Lede>
         <Actions>
           <LinkButton href="#work" trailingIcon="arrow-right">
