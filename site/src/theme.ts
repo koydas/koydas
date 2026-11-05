@@ -14,6 +14,10 @@ export const theme = {
     violet: '#8b5cf6',
   },
   radius: { sm: '8px', md: '12px', lg: '18px' },
+  // One scale each (site-kit/tokens.css; tested against it).
+  space: { 1: '4px', 2: '8px', 3: '12px', 4: '16px', 5: '24px', 6: '32px', 7: '48px' },
+  text: { xs: '12px', sm: '13px', md: '15px', lg: '18px', xl: '24px', '2xl': '32px' },
+  focus: { color: '#6d8dff', width: '2px', offset: '2px' },
   maxWidth: '1180px',
 } as const;
 

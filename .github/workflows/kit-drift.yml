@@ -1,0 +1,28 @@
+name: Site kit drift
+
+# Compares the site-kit version and hash each repo declares (default branch) with site-kit/KIT.json here (ADR-0001).
+# Read-only: it fetches five public files and writes nothing. A failing run means a repo is behind or ahead of the kit.
+on:
+  schedule:
+    - cron: '17 6 * * 1'
+  workflow_dispatch:
+  pull_request:
+    paths:
+      - 'site-kit/**'
+      - '.github/workflows/kit-drift.yml'
+
+permissions:
+  contents: read
+
+jobs:
+  drift:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 22
+      - run: node site-kit/scripts/kit.mjs verify
+      # On a kit PR the other repos are expected to be behind until they sync: the drift table runs on schedule and on demand only.
+      - run: node site-kit/scripts/drift.mjs
+        if: github.event_name != 'pull_request'
