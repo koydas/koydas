@@ -10,7 +10,7 @@ Platform engineer — AI-native engineering, platform engineering and DevEx. I b
 |---|---|
 | [`autonomous-dev-loop`](https://github.com/koydas/autonomous-dev-loop) | Issue → AI PR → evidence-backed AI review → auto-fix → human merge, on GitHub Actions. Built after an agent replaced a 26-test suite with an 18-line stub; 11 of its own features were shipped by the loop. 2,400+ tests, 59 ADRs. [Dashboard](https://koydas.github.io/autonomous-dev-loop/). |
 | [`ai-dev-tools`](https://github.com/koydas/ai-dev-tools) | The interactive counterpart in Claude Code: typed builders, an adversarial challenger, and a reviewer that runs your tests before it calls a patch done. [Dashboard](https://koydas.github.io/ai-dev-tools/). |
-| [`agent-patterns`](https://github.com/koydas/agent-patterns) | 21 multi-agent patterns indexed by the problem they solve — diagrams, trade-offs, failure modes, runnable code. 12 extracted from the two repos above. |
+| [`agent-patterns`](https://github.com/koydas/agent-patterns) | 21 multi-agent patterns indexed by the problem they solve — diagrams, trade-offs, failure modes, runnable code, and an [interactive playground](https://koydas.github.io/agent-patterns/) where each pattern runs as a simulation. 16 run in public repos. |
 | [`repo-orchestrator`](https://github.com/koydas/repo-orchestrator) | **M1–M2 implemented, M3–M5 design only.** Cross-repository coherence: a deterministic, read-only scan that finds where one repo's claims about another have drifted, with typed relationships, policies with named authorities, and evidence pinned to commits. 14 proposed ADRs. [Dashboard](https://koydas.github.io/repo-orchestrator/). |
 
 ### Infrastructure
