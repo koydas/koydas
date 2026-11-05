@@ -62,7 +62,7 @@ export function pythonBlock() {
     ...Object.entries(m.files).map(([f, h]) => `    ${lit(f)}: ${lit(h)},`),
     '}',
     'SK_FILES = {',
-    ...files.map((f) => `    ${lit(f)}: ${lit(readFileSync(join(KIT_DIR, f), 'utf8'))},  # noqa: E501`),
+    ...files.map((f) => `    ${lit(f)}: ${lit(readFileSync(join(KIT_DIR, f), 'utf8'))},`),
     '}',
     readFileSync(join(KIT_DIR, 'render.py'), 'utf8').trimEnd(),
     '# fmt: on',

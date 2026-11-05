@@ -4,10 +4,11 @@ SK_NAV = json.loads(SK_FILES["nav.json"])
 
 
 def _sk_expand(template: str, variables: dict[str, str], sites: list[dict[str, str]]) -> str:
+    def one(body: str, s: dict[str, str]) -> str:
+        return re.sub(r"\{\{s\.(\w+)\}\}", lambda k: s["cur"] if k[1] == "cur" else html.escape(s[k[1]]), body)
+
     def loop(m: re.Match[str]) -> str:
-        return "".join(
-            re.sub(r"\{\{s\.(\w+)\}\}", lambda k: s["cur"] if k[1] == "cur" else html.escape(s[k[1]]), m[1]) for s in sites
-        )
+        return "".join(one(m[1], s) for s in sites)
 
     def var(m: re.Match[str]) -> str:
         if m[1] not in variables:
