@@ -35,10 +35,14 @@ export const projects: Project[] = [
   {
     id: 'agent-patterns',
     title: 'Agent Patterns',
-    summary: '21 multi-agent patterns indexed by the problem they solve.',
-    highlights: ['Diagrams', 'Trade-offs', 'Failure modes', 'Runnable code'],
+    summary:
+      '21 multi-agent patterns indexed by the problem they solve, each as an interactive simulation you can run, break and compare.',
+    highlights: ['Interactive playground', 'Failure modes', 'Runnable code'],
     tags: ['Patterns', 'Agents', 'Architecture'],
-    links: [{ label: 'View project', href: `${GITHUB}/agent-patterns` }],
+    links: [
+      { label: 'Playground', href: 'https://koydas.github.io/agent-patterns/' },
+      { label: 'GitHub', href: `${GITHUB}/agent-patterns` },
+    ],
   },
   {
     id: 'repo-orchestrator',
