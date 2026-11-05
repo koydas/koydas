@@ -156,3 +156,23 @@ describe('drift detection', () => {
     expect(out[3]).toBe('no declaration found');
   });
 });
+
+describe('failure paths: an unknown site id is rejected the same way by every renderer', () => {
+  it('throws from render.mjs (header, footer), the React wrapper and the Python twin', () => {
+    const script = `import(${JSON.stringify(pathToFileURL(join(COPY, 'render.mjs')).href)}).then((k) => {
+      const out = [];
+      for (const f of [k.renderHeader, k.renderFooter]) { try { f('nope'); out.push('no error'); } catch (e) { out.push(e.message); } }
+      console.log(JSON.stringify(out));
+    });`;
+    const js = JSON.parse(execFileSync('node', ['-e', script], { encoding: 'utf8' })) as string[];
+    expect(js).toEqual(['site-kit: unknown site "nope"', 'site-kit: unknown site "nope"']);
+    expect(() => renderToStaticMarkup(<SiteHeader current="nope" />)).toThrow('site-kit: unknown site "nope"');
+    expect(() => renderToStaticMarkup(<SiteFooter current="nope" />)).toThrow('site-kit: unknown site "nope"');
+
+    const block = execFileSync('node', [join(SOURCE, 'scripts/kit.mjs'), 'print-python'], { encoding: 'utf8' });
+    const dir = mkdtempSync(join(tmpdir(), 'sk-'));
+    const py = join(dir, 'fail.py');
+    writeFileSync(py, `import html, json, re\n${block}\nfor f in (sk_header, sk_footer):\n    try:\n        f('nope')\n        print('no error')\n    except KeyError as e:\n        print('KeyError')\n`);
+    expect(execFileSync('python3', ['-I', py], { encoding: 'utf8' }).trim().split('\n')).toEqual(['KeyError', 'KeyError']);
+  });
+});

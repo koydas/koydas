@@ -20,7 +20,9 @@ def _sk_expand(template: str, variables: dict[str, str], sites: list[dict[str, s
 
 def _sk_context(current: str) -> tuple[dict[str, str], list[dict[str, str]]]:
     sites = SK_NAV["sites"]
-    site = next(s for s in sites if s["id"] == current)
+    site = next((s for s in sites if s["id"] == current), None)
+    if site is None:
+        raise KeyError(f"site-kit: unknown site {current!r}")
     variables = {
         "version": SK_VERSION,
         "site_id": site["id"],
