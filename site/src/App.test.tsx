@@ -28,4 +28,13 @@ describe('App', () => {
     expect(screen.getByRole('main')).toBeInTheDocument();
     expect(screen.getByRole('heading', { level: 1 })).toHaveTextContent(/reliable/i);
   });
+
+  it('keeps the Home anchor on the page header and the hero, so #home reveals the headline', () => {
+    const { container } = render(<App />);
+
+    const home = container.querySelector('#home');
+    expect(container.querySelectorAll('#home')).toHaveLength(1);
+    expect(home?.querySelector('h1')).toHaveTextContent(/reliable/i);
+    expect(home).toContainElement(screen.getByRole('link', { name: /explore my work/i }));
+  });
 });

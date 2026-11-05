@@ -22,14 +22,14 @@ const evidenceChecks = [
 
 export default function Hero() {
   return (
-    <>
-    <PageHead
-      eyebrow="AI-native engineering · Platform engineering · DevEx"
-      title="I build the foundations that make AI agents reliable."
-      lede="Agent harnesses, safe execution, evaluations and developer platforms."
-      titleId="hero-title"
-    />
-    <HeroSection id="home" aria-labelledby="hero-title">
+    <div id="home">
+      <PageHead
+        eyebrow="AI-native engineering · Platform engineering · DevEx"
+        title="I build the foundations that make AI agents reliable."
+        lede="Agent harnesses, safe execution, evaluations and developer platforms."
+        titleId="hero-title"
+      />
+    <HeroSection aria-labelledby="hero-title">
       <div>
         <Actions>
           <LinkButton href="#work" trailingIcon="arrow-right">
@@ -67,6 +67,6 @@ export default function Hero() {
         </Evidence>
       </Panel>
     </HeroSection>
-    </>
+    </div>
   );
 }
