@@ -17,12 +17,12 @@ permissions:
 jobs:
   drift:
     runs-on: ubuntu-latest
-    # On a kit PR the other repos are expected to be behind until they sync: report, do not block.
-    continue-on-error: ${{ github.event_name == 'pull_request' }}
     steps:
       - uses: actions/checkout@v4
       - uses: actions/setup-node@v4
         with:
           node-version: 22
       - run: node site-kit/scripts/kit.mjs verify
+      # On a kit PR the other repos are expected to be behind until they sync: the drift table runs on schedule and on demand only.
       - run: node site-kit/scripts/drift.mjs
+        if: github.event_name != 'pull_request'
