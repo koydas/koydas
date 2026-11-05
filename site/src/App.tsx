@@ -9,11 +9,13 @@ import InfraCard from './components/infra-card/infra-card';
 import WorkSection from './components/work-section/work-section';
 import WritingSection from './components/writing-section/writing-section';
 import { GlobalStyle } from './App.styles';
+import { SiteHeader } from './site-kit/react/SiteShell';
 
 export default function App() {
   return (
     <>
       <GlobalStyle />
+      <SiteHeader current="portfolio" />
       <Header />
       <main>
         <Hero />

@@ -2,18 +2,15 @@ import Icon from '../icons/icon';
 import LinkButton from '../link-button/link-button';
 import PipelineDiagram from '../pipeline-diagram/pipeline-diagram';
 import { pillars, site } from '../../data/site';
+import { PageHead } from '../../site-kit/react/SiteShell';
 import {
-  Accent,
   Actions,
-  Eyebrow,
   Evidence,
   HeroSection,
-  Lede,
   Panel,
   PanelTitle,
   Pillar,
   Pillars,
-  Title,
 } from './hero.styles';
 
 const evidenceChecks = [
@@ -25,17 +22,15 @@ const evidenceChecks = [
 
 export default function Hero() {
   return (
+    <>
+    <PageHead
+      eyebrow="AI-native engineering · Platform engineering · DevEx"
+      title="I build the foundations that make AI agents reliable."
+      lede="Agent harnesses, safe execution, evaluations and developer platforms."
+      titleId="hero-title"
+    />
     <HeroSection id="home" aria-labelledby="hero-title">
       <div>
-        <Eyebrow>AI-Native Engineering · Platform Engineering · DevEx</Eyebrow>
-        <Title id="hero-title">
-          I build the foundations that make AI agents <Accent>reliable.</Accent>
-        </Title>
-        <Lede>
-          Agent harnesses, safe execution, evaluations, and developer platforms. I design systems
-          that make automation trustworthy, observable, and useful in real software teams — and
-          that let other engineers build on them without me.
-        </Lede>
         <Actions>
           <LinkButton href="#work" trailingIcon="arrow-right">
             Explore my work
@@ -72,5 +67,6 @@ export default function Hero() {
         </Evidence>
       </Panel>
     </HeroSection>
+    </>
   );
 }

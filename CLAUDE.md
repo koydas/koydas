@@ -2,6 +2,8 @@
 
 `README.md` is the GitHub profile; `site/` is the Vite/React/TypeScript site deployed by `.github/workflows/deploy-site.yml`. Repo descriptions in the README must match the repos' own READMEs (counts of ADRs/tests/patterns drift).
 
+The shared site shell (top bar with site switcher, footer, page header, tokens) is `site-kit/` ([ADR-0001](docs/adr/0001-shared-site-shell-vendored-kit.md)); the other four sites vendor it.
+
 Procedures in `.claude/skills/`: `site-change`.
 
 ## Toolbox — koydas/ai-dev-tools

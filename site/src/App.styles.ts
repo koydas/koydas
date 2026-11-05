@@ -12,6 +12,7 @@ export const GlobalStyle = createGlobalStyle`
 
   html {
     scroll-behavior: smooth;
+    scroll-padding-top: calc(var(--sk-bar-h) + 8px);
   }
 
   body {
@@ -27,9 +28,10 @@ export const GlobalStyle = createGlobalStyle`
   }
 
   a:focus-visible,
-  button:focus-visible {
-    outline: 2px solid ${theme.color.accentSoft};
-    outline-offset: 2px;
+  button:focus-visible,
+  summary:focus-visible {
+    outline: ${theme.focus.width} solid ${theme.focus.color};
+    outline-offset: ${theme.focus.offset};
   }
 
   @media (prefers-reduced-motion: reduce) {

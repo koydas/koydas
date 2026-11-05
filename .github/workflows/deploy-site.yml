@@ -4,11 +4,13 @@ on:
   pull_request:
     paths:
       - 'site/**'
+      - 'site-kit/**'
       - '.github/workflows/deploy-site.yml'
   push:
     branches: [main]
     paths:
       - 'site/**'
+      - 'site-kit/**'
       - '.github/workflows/deploy-site.yml'
   workflow_dispatch:
 

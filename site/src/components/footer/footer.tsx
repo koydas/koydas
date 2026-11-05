@@ -1,10 +1,14 @@
 import { site } from '../../data/site';
-import { FooterBar } from './footer.styles';
+import { SiteFooter } from '../../site-kit/react/SiteShell';
+import { Copyright, FooterBar } from './footer.styles';
 
 export default function Footer() {
   return (
     <FooterBar>
-      © {new Date().getFullYear()} {site.name}
+      <SiteFooter current="portfolio" />
+      <Copyright>
+        © {new Date().getFullYear()} {site.name}
+      </Copyright>
     </FooterBar>
   );
 }
